@@ -1,5 +1,8 @@
 package repository
 
-type Vagas interface {
+import "api-central-de-vagas/model"
 
+type Vagas interface {
+	CreateUser(user *model.User) error
+	GetUserByUID(uid string) (*model.User, error)
 }

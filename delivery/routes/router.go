@@ -17,7 +17,7 @@ func Routes() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	// e.GET("/vagas/user/:userId", ctrl.FindUserById)
+	e.POST("/user/create/:tokenId", ctrl.CreateUser)
 
 	port = os.Getenv("PORT")
 
