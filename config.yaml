@@ -1,0 +1,6 @@
+development:
+  mongo:
+    vagas: "mongodb://mnuser:MlKkQkcHUIBB1JMd@moneri-net-shard-00-00-bour7.mongodb.net:27017,moneri-net-shard-00-01-bour7.mongodb.net:27017,moneri-net-shard-00-02-bour7.mongodb.net:27017/mission?ssl=true&replicaSet=moneri-net-shard-0&authSource=admin"
+production:
+  mongo:
+    vagas: "mongodb://mnuser:MlKkQkcHUIBB1JMd@moneri-net-shard-00-00-bour7.mongodb.net:27017,moneri-net-shard-00-01-bour7.mongodb.net:27017,moneri-net-shard-00-02-bour7.mongodb.net:27017/mission?ssl=true&replicaSet=moneri-net-shard-0&authSource=admin"
