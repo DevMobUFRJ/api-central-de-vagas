@@ -2,10 +2,10 @@ package service
 
 import (
 	"api-central-de-vagas/model"
-	"os"
+	"mime/multipart"
 )
 
 type Vagas interface {
 	CreateUser(user *model.User) error
-	SendCurriculum(curriculum *os.File, authToken string) error
+	SendCurriculum(curriculum multipart.File, authToken string) error
 }

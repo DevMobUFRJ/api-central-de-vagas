@@ -5,9 +5,8 @@ import (
 	"fmt"
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
-	"io/ioutil"
-	"os"
-	"time"
+	"io"
+	"mime/multipart"
 )
 
 type Resource struct {
@@ -38,18 +37,18 @@ func (r *Resource) UpdateUser(user *model.User) error {
 	return nil
 }
 
-func (r *Resource) SendCurriculum(curriculum *os.File, createdAt time.Time) (interface{}, error) {
-	file, err := r.mongoSession.DB("central-de-vagas").GridFS("fs").Create(fmt.Sprintf("%s - %s.pdf", curriculum.Name(), createdAt))
+func (r *Resource) SendCurriculum(curriculum multipart.File, userName string) (interface{}, error) {
+	file, err := r.mongoSession.DB("central-de-vagas").GridFS("fs").Create(fmt.Sprintf("CV_%s.pdf", userName))
 	if err != nil {
 		return "", err
 	}
 
-	byteSlice, err := ioutil.ReadAll(curriculum)
+	_, err = io.Copy(file, curriculum)
 	if err != nil {
 		return "", err
 	}
 
-	if _, err := file.Write(byteSlice); err != nil {
+	if err := curriculum.Close(); err != nil {
 		return "", err
 	}
 

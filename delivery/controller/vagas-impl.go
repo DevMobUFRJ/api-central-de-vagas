@@ -5,9 +5,8 @@ import (
 	"api-central-de-vagas/usecase/service"
 	"errors"
 	"github.com/labstack/echo/v4"
-	"io"
+	"mime/multipart"
 	"net/http"
-	"os"
 )
 
 type Resource struct {
@@ -63,7 +62,7 @@ func getTokenFromHeader(c echo.Context) (string, error) {
 	return authToken, nil
 }
 
-func getCurriculumFromFormData(c echo.Context) (*os.File, error) {
+func getCurriculumFromFormData(c echo.Context) (multipart.File, error) {
 
 	file, err := c.FormFile("curriculum")
 	if err != nil {
@@ -74,17 +73,6 @@ func getCurriculumFromFormData(c echo.Context) (*os.File, error) {
 	if err != nil {
 		return nil, err
 	}
-	defer src.Close()
 
-	dst, err := os.Create(file.Filename)
-	if err != nil {
-		return nil, err
-	}
-	defer dst.Close()
-
-	if _, err = io.Copy(dst, src); err != nil {
-		return nil, err
-	}
-
-	return dst, nil
+	return src, nil
 }

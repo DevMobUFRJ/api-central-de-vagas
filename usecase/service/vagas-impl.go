@@ -6,7 +6,7 @@ import (
 	"context"
 	"firebase.google.com/go/auth"
 	"fmt"
-	"os"
+	"mime/multipart"
 	"time"
 )
 
@@ -33,11 +33,12 @@ func (r *Resource) CreateUser(user *model.User) error {
 		Disabled(false)
 
 	// Creates the user in firebase
-	_, err := r.Client.CreateUser(context.Background(), params)
+	userRecord, err := r.Client.CreateUser(context.Background(), params)
 	if err != nil {
 		return err
 	}
 
+	user.UID = userRecord.UID
 	user.Password = ""
 	user.CreatedAt = time.Now()
 	user.UpdatedAt = time.Now()
@@ -48,7 +49,7 @@ func (r *Resource) CreateUser(user *model.User) error {
 	return nil
 }
 
-func (r *Resource) SendCurriculum(curriculum *os.File, authToken string) error {
+func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) error {
 	uuid, err := r.VerifyIDToken(authToken)
 	if err != nil {
 		return err
@@ -59,8 +60,9 @@ func (r *Resource) SendCurriculum(curriculum *os.File, authToken string) error {
 		return err
 	}
 
-	fileId, err := r.Repository.SendCurriculum(curriculum, user.CreatedAt)
+	fileId, err := r.Repository.SendCurriculum(curriculum, user.DisplayName)
 	if err != nil {
+		fmt.Println("ERro send")
 		return err
 	}
 
@@ -68,6 +70,7 @@ func (r *Resource) SendCurriculum(curriculum *os.File, authToken string) error {
 	user.UpdatedAt = time.Now()
 
 	if err := r.Repository.UpdateUser(user); err != nil {
+		fmt.Println("ERro update")
 		return err
 	}
 
