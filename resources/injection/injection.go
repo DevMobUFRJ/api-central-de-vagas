@@ -23,6 +23,7 @@ var (
 func Inject() {
 
 	MongoSession = database.MongoDBConnect(os.Getenv("MONGO_DB"))
+	FirebaseAuth = database.FirebaseAuthConnect()
 
 	graph = inject.NewGraph()
 
