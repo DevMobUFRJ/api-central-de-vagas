@@ -2,7 +2,6 @@ package routes
 
 import (
 	"api-central-de-vagas/resources/injection"
-	"fmt"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"os"
@@ -19,9 +18,7 @@ func Routes() {
 	e.POST("/user/create", ctrl.CreateUser) // Post Request Body
 	e.POST("/user/create/cv", ctrl.SendCurriculum) // Post Curriculum file with Token in the header
 
-	fmt.Println("oi")
 	port = os.Getenv("PORT")
-	fmt.Println(port)
 
 	if port != "" {
 		e.Logger.Fatal(e.Start(":" + port))
