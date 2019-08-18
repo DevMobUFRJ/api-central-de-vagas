@@ -1,6 +1,0 @@
-development:
-  mongo:
-    vagas: "mongodb://admin:iEio5czDXpwwZbcg@devmobcluster-shard-00-00-glpbt.mongodb.net:27017,devmobcluster-shard-00-01-glpbt.mongodb.net:27017,devmobcluster-shard-00-02-glpbt.mongodb.net:27017/central-de-vagas?ssl=true&replicaSet=DevMobCluster-shard-0&authSource=admin"
-production:
-  mongo:
-    vagas: "mongodb://admin:iEio5czDXpwwZbcg@devmobcluster-shard-00-00-glpbt.mongodb.net:27017,devmobcluster-shard-00-01-glpbt.mongodb.net:27017,devmobcluster-shard-00-02-glpbt.mongodb.net:27017/central-de-vagas?ssl=true&replicaSet=DevMobCluster-shard-0&authSource=admin"
