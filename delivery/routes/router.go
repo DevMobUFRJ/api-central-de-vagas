@@ -15,14 +15,14 @@ func Routes() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.POST("/user/create", ctrl.CreateUser)        // Post Request Body
+	e.POST("/user/create", ctrl.CreateUser) // Post Request Body
 	e.POST("/user/create/cv", ctrl.SendCurriculum) // Post Curriculum file with Token in the header
 
-	if os.Getenv("PORT") != "" {
-		port = os.Getenv("PORT")
-	} else {
-		port = "80"
-	}
+	port = os.Getenv("PORT")
 
-	e.Logger.Fatal(e.Start(":" + port))
+	if port != "" {
+		e.Logger.Fatal(e.Start(":" + port))
+	} else {
+		e.Logger.Fatal(e.Start(":7070"))
+	}
 }
