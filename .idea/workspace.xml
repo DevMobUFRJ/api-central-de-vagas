@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c180089-6946-4acf-8518-9d3fd95fdda3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/service-account-file.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/delivery/controller/vagas-impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/controller/vagas-impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery/controller/vagas.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/controller/vagas.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery/routes/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/routes/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistance/repository/vagas-impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/persistance/repository/vagas-impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/persistance/repository/vagas.go" beforeDir="false" afterPath="$PROJECT_DIR$/persistance/repository/vagas.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usecase/service/vagas-impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/service/vagas-impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/usecase/service/vagas.go" beforeDir="false" afterPath="$PROJECT_DIR$/usecase/service/vagas.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service-account-file.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +26,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/injection/injection.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+            <state relative-caret-position="95">
+              <caret line="5" column="211" selection-start-line="5" selection-start-column="211" selection-end-line="5" selection-end-column="211" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -45,12 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/delivery/controller/vagas-impl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
-              <folding>
-                <element signature="n#!!block;n#getAuthToken#0" />
-                <element signature="n#!!block;n#getCurriculum#0" />
-              </folding>
+            <state relative-caret-position="342">
+              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -58,8 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/usecase/service/vagas-impl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="361">
+              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
               <folding>
                 <element signature="n#!!block;n#VerifyIDToken#0" />
               </folding>
@@ -68,10 +75,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/persistance/repository/vagas-impl.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+            <state relative-caret-position="1387">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -110,19 +126,20 @@
         <option value="$PROJECT_DIR$/go.sum" />
         <option value="$PROJECT_DIR$/resources/database/mongodb.go" />
         <option value="$PROJECT_DIR$/delivery/routes/routes.go" />
-        <option value="$PROJECT_DIR$/main.go" />
         <option value="$PROJECT_DIR$/resources/database/firebase.go" />
         <option value="$PROJECT_DIR$/resources/injection/injection.go" />
-        <option value="$PROJECT_DIR$/config.yaml" />
         <option value="$PROJECT_DIR$/service-account-file.json" />
         <option value="$PROJECT_DIR$/delivery/controller/vagas.go" />
         <option value="$PROJECT_DIR$/persistance/repository/vagas.go" />
         <option value="$PROJECT_DIR$/persistance/repository/vagas-impl.go" />
         <option value="$PROJECT_DIR$/usecase/service/vagas.go" />
-        <option value="$PROJECT_DIR$/usecase/service/vagas-impl.go" />
         <option value="$PROJECT_DIR$/delivery/routes/router.go" />
-        <option value="$PROJECT_DIR$/delivery/controller/vagas-impl.go" />
         <option value="$PROJECT_DIR$/model/user.go" />
+        <option value="$PROJECT_DIR$/config.yaml" />
+        <option value="$PROJECT_DIR$/delivery/controller/vagas-impl.go" />
+        <option value="$PROJECT_DIR$/usecase/service/vagas-impl.go" />
+        <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -176,6 +193,17 @@
             <path>
               <item name="api-central-de-vagas" type="b2602c69:ProjectViewProjectNode" />
               <item name="api-central-de-vagas" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-central-de-vagas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-central-de-vagas" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="injection" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api-central-de-vagas" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api-central-de-vagas" type="462c0819:PsiDirectoryNode" />
               <item name="usecase" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -202,6 +230,7 @@
     <property name="last_opened_file_path" value="$USER_HOME$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RunDashboard">
@@ -221,7 +250,9 @@
       <module name="api-central-de-vagas" />
       <working_directory value="$PROJECT_DIR$" />
       <envs>
-        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="./service-account-file.json" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="./firebase-adminsdk.json" />
+        <env name="FIREBASE_CREDENTIALS_JSON" value="{   &quot;type&quot;: &quot;service_account&quot;,   &quot;project_id&quot;: &quot;central-de-vagas&quot;,   &quot;private_key_id&quot;: &quot;e264ab8809b9fa3430cff3a6b1c39270ee16dbed&quot;,   &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCrll/LeAzh1jWG\nlQ0ZynRfeKMNjRsXCHgOVJx6U1gefkKtDm6FOrfykKq+PfRv1SwLSMO1MzzbUKnM\nNoQ9Ct708LYk5VqyTCwaska52ZG9ue49tHHECm8qzGbqsE4zz0VGeKlZ7jlE9vQx\nGg3Lc+RBunobShXWeeGYpcYsJ1eEiIIooV3xwFfNP0raqpmehJnbewEiwWgeK8zb\nPQ9Ld2VXRhsZcCCrQS59S1suHbhh2Wdf6c6rzShBqs2KRpOHfEQnFHnPz7PZ/Ode\nRs1ZDySW8Orccl6wse1clXuni2bW9HCZtQ2zn9ovm5lSdSaRjoC11QWSNNDHftiP\nUBSahe3pAgMBAAECggEAFKVyr+MpW6hAhwnaynJpp842gmwq6Q3YElNcg7yRExQ6\ntiORKV9MIHgHT35ZcfZqxw3RnLVGWpZdZAjgRw8OjlcDd7OQQvl26hxu9bBoALYF\nZG/Yq4/c2f+/13fw5PuI+KaOrBdF1VZIwjrCE6vFeKI1TKDQuV6vhkRWMNxoA7aN\nmT9qQGtxdlup5J0Dxug66DQ1FwbxpnPQI4gIUCJVSVLW8/Q4/ApR+dbev7hBPlxf\ni/aGDVtWAv8228na0qSQBjEOmSJorGWwknpRF2fkN42/cmownEgG7XoMwHbbU86H\ncjT1/bxS7gkqBoDFBgXPIq6exUxwn1aYms9ZetbuTQKBgQDl8Pr7A6qLLcl0AF5F\nVqD6xctQhl1ZfB6Rq+i8dwpzlFEYocGbFwSFfsBKDFaoiC0Jrr81XmnTFmf62Ihh\nNGxoN6GEaVw6WBWmA9asRmsZaRdRBF9ra2Hf+y5J1TbT7II8C6LMPiSakGYPrr5g\nj0KTNUrq1AyflblLCH/qB8RQZQKBgQC/CHB0zn3hqm/h1Snt8Rjw2sb/Uce9M44J\nJ8aqXM8A2h+29Kk1NwYlI1yqWWVQrSddk1zNp11UyOvfuGIJb8WJTqNLrqqKB5Ol\nbuTI84I8p8rpQL2LuImxWJLgB2/0olU1AomeNY72/TZtrL7ZEmVXdJ31Hr7kD1hU\nsaiTXBUVNQKBgQDi4NtDQWLM4Oic5KAfmlJMHU12rpz85lLjONPy4SIW2IkL3M7C\nz/tOHLpuVa5Lq9GEdD+F0RpphPojr/MgtjEgw4NCuxKdHrx9idwPL4wNDnxLHB1q\nSBHShmwtvYrTn9EAnhqLm+VR/Jg3cRu2+qOdzD+XZJLwAzNIraJIsFErYQKBgQCg\n6pX3/rzQ68XlAK+aLD4rHM8F4TiUaqoZkjTp6tXATPzsG3mxRtFZVUlIgZczdzgy\nveAtp+6ZbcorIOEMO+e0utYY+V/Ud39qmlgD4gNx3pGxHATOfjsWdZr7Naib9GY8\nChAsgccUzMUda6czqShOnAA2q5h2+WoZpbFvt+BWhQKBgQDcW6CziPz4KC2/c6MA\naXXNGAPj0UIkPmDgOEYmXAIDfP6b4t9eGiS0Lb4i2NZwqpF6+eUMMGqqc5bsUeFX\nypeJU8iDGg+8Q/NoO2guiB/oO6z4TllPR9fP39z1XHsHpgdU3cFjQkgbGUtGoS8C\nbavX95o6P2Tey3vNqlmImDfEDA==\n-----END PRIVATE KEY-----\n&quot;,   &quot;client_email&quot;: &quot;firebase-adminsdk-q159p@central-de-vagas.iam.gserviceaccount.com&quot;,   &quot;client_id&quot;: &quot;114594005592012696352&quot;,   &quot;auth_uri&quot;: &quot;https://accounts.google.com/o/oauth2/auth&quot;,   &quot;token_uri&quot;: &quot;https://oauth2.googleapis.com/token&quot;,   &quot;auth_provider_x509_cert_url&quot;: &quot;https://www.googleapis.com/oauth2/v1/certs&quot;,   &quot;client_x509_cert_url&quot;: &quot;https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-q159p%40central-de-vagas.iam.gserviceaccount.com&quot; } " />
+        <env name="MONGO_DB" value="mongodb://admin:iEio5czDXpwwZbcg@devmobcluster-shard-00-00-glpbt.mongodb.net:27017,devmobcluster-shard-00-01-glpbt.mongodb.net:27017,devmobcluster-shard-00-02-glpbt.mongodb.net:27017/central-de-vagas?ssl=true&amp;replicaSet=DevMobCluster-shard-0&amp;authSource=admin" />
       </envs>
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/main.go" />
@@ -238,12 +269,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17004265" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17324094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23185265" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22643554" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -251,7 +282,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.22101842" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26218852" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -340,27 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service-account-file.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/injection/injection.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/delivery/controller/vagas.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -385,16 +395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/usecase/service/vagas-impl.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!block;n#VerifyIDToken#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/user.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -405,21 +405,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/persistance/repository/vagas-impl.go">
+    <entry file="file://$PROJECT_DIR$/service-account-file.json" />
+    <entry file="file://$PROJECT_DIR$/delivery/controller/vagas-impl.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="40" column="56" lean-forward="true" selection-start-line="40" selection-start-column="56" selection-end-line="40" selection-end-column="56" />
+        <state relative-caret-position="342">
+          <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delivery/controller/vagas-impl.go">
+    <entry file="file://$PROJECT_DIR$/persistance/repository/vagas-impl.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
+        <state relative-caret-position="1387">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/usecase/service/vagas-impl.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
           <folding>
-            <element signature="n#!!block;n#getAuthToken#0" />
-            <element signature="n#!!block;n#getCurriculum#0" />
+            <element signature="n#!!block;n#VerifyIDToken#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/io/ioutil/ioutil.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="78" column="5" selection-start-line="78" selection-start-column="5" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/os/types.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/firebase-adminsdk.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
@@ -430,10 +465,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/injection/injection.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="95">
+          <caret line="5" column="211" selection-start-line="5" selection-start-column="211" selection-end-line="5" selection-end-column="211" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="11" lean-forward="true" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
         </state>
       </provider>
     </entry>

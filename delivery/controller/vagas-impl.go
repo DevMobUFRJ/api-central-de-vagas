@@ -28,7 +28,7 @@ func (r *Resource) CreateUser(c echo.Context) error {
 	}
 
 	if err := r.Service.CreateUser(user); err != nil {
-		return c.JSON(http.StatusBadRequest, err)
+		return c.JSON(http.StatusBadRequest, err.Error())
 	}
 
 	return c.JSON(http.StatusOK, http.NoBody)

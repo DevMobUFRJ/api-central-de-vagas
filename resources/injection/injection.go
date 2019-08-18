@@ -9,6 +9,7 @@ import (
 	"firebase.google.com/go/auth"
 	"github.com/globalsign/mgo"
 	"github.com/karlkfi/inject"
+	"os"
 )
 
 var (
@@ -22,7 +23,7 @@ var (
 
 func Inject(cfg config.Config) {
 
-	MongoSession = database.MongoDBConnect(cfg.GetString("mongo.vagas"))
+	MongoSession = database.MongoDBConnect(os.Getenv("MONGO_DB"))
 	FirebaseAuth = database.FirebaseAuthConnect()
 
 	graph = inject.NewGraph()
