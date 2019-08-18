@@ -4,6 +4,7 @@ import (
 	"api-central-de-vagas/resources/injection"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
+	"io/ioutil"
 	"os"
 )
 
@@ -24,5 +25,11 @@ func Routes() {
 		e.Logger.Fatal(e.Start(":" + port))
 	} else {
 		e.Logger.Fatal(e.Start(":80"))
+	}
+
+	credentials := []byte(os.Getenv("FIREBASE_CREDENTIALS_JSON"))
+	err := ioutil.WriteFile("./firebase-adminsdk.json", credentials, 0644)
+	if err != nil {
+		panic(err)
 	}
 }
