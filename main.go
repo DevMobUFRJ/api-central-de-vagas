@@ -2,7 +2,6 @@ package main
 
 import (
 	"api-central-de-vagas/delivery/routes"
-	"api-central-de-vagas/resources/config"
 	"api-central-de-vagas/resources/injection"
 	"io/ioutil"
 	"os"
@@ -15,8 +14,7 @@ func init() {
 		panic(err)
 	}
 
-	cfg := config.NewViperConfig()
-	injection.Inject(cfg)
+	injection.Inject()
 }
 
 func main() {

@@ -3,7 +3,6 @@ package injection
 import (
 	"api-central-de-vagas/delivery/controller"
 	"api-central-de-vagas/persistance/repository"
-	"api-central-de-vagas/resources/config"
 	"api-central-de-vagas/resources/database"
 	"api-central-de-vagas/usecase/service"
 	"firebase.google.com/go/auth"
@@ -21,7 +20,7 @@ var (
 	FirebaseAuth *auth.Client
 )
 
-func Inject(cfg config.Config) {
+func Inject() {
 
 	MongoSession = database.MongoDBConnect(os.Getenv("MONGO_DB"))
 	FirebaseAuth = database.FirebaseAuthConnect()
