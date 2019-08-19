@@ -33,8 +33,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/database/mongodb.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="380">
+              <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
               <folding>
                 <element signature="e#18#115#0" expanded="true" />
               </folding>
@@ -490,10 +490,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../pkg/mod/github.com/globalsign/mgo@v0.0.0-20181015135952-eeefdecb41b8/session.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="702" column="5" selection-start-line="702" selection-start-column="5" selection-end-line="702" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/database/mongodb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="380">
+          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
           <folding>
             <element signature="e#18#115#0" expanded="true" />
           </folding>
