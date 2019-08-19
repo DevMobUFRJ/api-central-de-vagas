@@ -97,6 +97,7 @@
       <find>port</find>
       <find>cfg.get</find>
       <find>close</find>
+      <find>Logrus</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\Guilherme\go\src\api-central-de-vagas</dir>

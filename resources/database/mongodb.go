@@ -27,8 +27,8 @@ func MongoDBConnect(url string) *mgo.Session {
 		return conn, err
 	}
 
-	session, err := mgo.DialWithInfo(dialInfo)
 	panic(url)
+	session, err := mgo.DialWithInfo(dialInfo)
 
 	if err != nil {
 		panic(err)
