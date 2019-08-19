@@ -25,6 +25,8 @@ func Inject() {
 	MongoSession = database.MongoDBConnect(os.Getenv("MONGO_DB"))
 	FirebaseAuth = database.FirebaseAuthConnect()
 
+	panic("asd")
+
 	graph = inject.NewGraph()
 
 	graph.Define(&Controller, inject.NewProvider(controller.NewController, &Service))

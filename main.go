@@ -14,8 +14,6 @@ func init() {
 		panic(err)
 	}
 
-	panic("asd")
-
 	injection.Inject()
 }
 
