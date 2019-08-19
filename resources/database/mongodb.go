@@ -14,8 +14,6 @@ func MongoDBConnect(url string) *mgo.Session {
 		panic("Can`t start because mongo uri is empty")
 	}
 
-	panic(url)
-
 	dialInfo, err := mgo.ParseURL(url)
 
 	if err != nil {
@@ -28,16 +26,17 @@ func MongoDBConnect(url string) *mgo.Session {
 		conn, err := tls.Dial("tcp", addr.String(), &tlsConfig)
 		return conn, err
 	}
-	session,err := mgo.DialWithInfo(dialInfo)
+	session, err := mgo.DialWithInfo(dialInfo)
 
 	if err != nil {
 		panic(err)
-	}else {
+	} else {
 		logrus.Info(fmt.Sprintf("Connected with MongoDB in database:[%s]", dialInfo.Database))
 	}
 
 	session.SetMode(mgo.Monotonic, true)
 
-	logrus.Info()
+	panic(url)
+
 	return session
 }
