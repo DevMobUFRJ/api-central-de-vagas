@@ -7,11 +7,14 @@ import (
 	"github.com/sirupsen/logrus"
 	"net"
 )
+
 func MongoDBConnect(url string) *mgo.Session {
 
 	if len(url) == 0 {
 		panic("Can`t start because mongo uri is empty")
 	}
+
+	panic(url)
 
 	dialInfo, err := mgo.ParseURL(url)
 
