@@ -22,12 +22,16 @@ func MongoDBConnect(url string) *mgo.Session {
 
 	tlsConfig := tls.Config{}
 
-	panic(url)
-
 	dialInfo.DialServer = func(addr *mgo.ServerAddr) (net.Conn, error) {
 		conn, err := tls.Dial("tcp", addr.String(), &tlsConfig)
+		if err != nil {
+			panic(err)
+		}
 		return conn, err
 	}
+
+	panic(url)
+
 	session, err := mgo.DialWithInfo(dialInfo)
 
 	if err != nil {
