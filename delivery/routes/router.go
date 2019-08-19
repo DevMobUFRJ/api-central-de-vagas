@@ -4,7 +4,6 @@ import (
 	"api-central-de-vagas/resources/injection"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/sirupsen/logrus"
 	"os"
 )
 
@@ -21,5 +20,11 @@ func Routes() {
 
 	port = os.Getenv("PORT")
 
-	logrus.Info(port)
+	panic("asd")
+
+	if port != "" {
+		e.Logger.Fatal(e.Start(":" + port))
+	} else {
+		e.Logger.Fatal(e.Start(":80"))
+	}
 }
