@@ -20,8 +20,6 @@ func Routes() {
 
 	port = os.Getenv("PORT")
 
-	panic("asd")
-
 	if port != "" {
 		e.Logger.Fatal(e.Start(":" + port))
 	} else {
