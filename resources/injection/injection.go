@@ -21,9 +21,9 @@ var (
 )
 
 func Inject() {
-	panic("asd")
 
 	MongoSession = database.MongoDBConnect(os.Getenv("MONGO_DB"))
+	panic("asd")
 	FirebaseAuth = database.FirebaseAuthConnect()
 
 	graph = inject.NewGraph()
