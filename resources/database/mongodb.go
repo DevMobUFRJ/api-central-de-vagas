@@ -22,6 +22,8 @@ func MongoDBConnect(url string) *mgo.Session {
 
 	tlsConfig := tls.Config{}
 
+	panic(url)
+
 	dialInfo.DialServer = func(addr *mgo.ServerAddr) (net.Conn, error) {
 		conn, err := tls.Dial("tcp", addr.String(), &tlsConfig)
 		return conn, err
@@ -35,8 +37,6 @@ func MongoDBConnect(url string) *mgo.Session {
 	}
 
 	session.SetMode(mgo.Monotonic, true)
-
-	panic(url)
 
 	return session
 }
