@@ -7,5 +7,7 @@ import (
 
 type Vagas interface {
 	CreateUser(user *model.User) error
+	UpdateUser(user *model.User, authToken string) error
 	SendCurriculum(curriculum multipart.File, authToken string) error
+	CreateVaga(vaga *model.Vaga, authToken string) error
 }

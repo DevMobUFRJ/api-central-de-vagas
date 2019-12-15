@@ -9,5 +9,6 @@ type Vagas interface {
 	CreateUser(user *model.User) error
 	UpdateUser(user *model.User) error
 	SendCurriculum(curriculum multipart.File, userName string) (interface{}, error)
+	CreateVaga(vaga *model.Vaga) error
 	GetUserByUID(uid string) (*model.User, error)
 }

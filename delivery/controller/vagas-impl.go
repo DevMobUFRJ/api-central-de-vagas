@@ -33,6 +33,25 @@ func (r *Resource) CreateUser(c echo.Context) error {
 	return c.JSON(http.StatusOK, http.NoBody)
 }
 
+func (r *Resource) UpdateUser(c echo.Context) error {
+
+	authToken, err := getTokenFromHeader(c)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	user := new(model.User)
+	if err := c.Bind(user); err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	if err := r.Service.UpdateUser(user, authToken); err != nil {
+		return c.JSON(http.StatusBadRequest, err.Error())
+	}
+
+	return c.JSON(http.StatusOK, http.NoBody)
+}
+
 func (r *Resource) SendCurriculum(c echo.Context) error {
 
 	authToken, err := getTokenFromHeader(c)
@@ -48,6 +67,25 @@ func (r *Resource) SendCurriculum(c echo.Context) error {
 
 	if err := r.Service.SendCurriculum(curriculum, authToken); err != nil {
 		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	return c.JSON(http.StatusOK, http.NoBody)
+}
+
+func (r *Resource) CreateVaga(c echo.Context) error {
+
+	authToken, err := getTokenFromHeader(c)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	vaga := new(model.Vaga)
+	if err := c.Bind(vaga); err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	if err := r.Service.CreateVaga(vaga, authToken); err != nil {
+		return c.JSON(http.StatusBadRequest, err.Error())
 	}
 
 	return c.JSON(http.StatusOK, http.NoBody)

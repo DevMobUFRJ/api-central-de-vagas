@@ -49,6 +49,17 @@ func (r *Resource) CreateUser(user *model.User) error {
 	return nil
 }
 
+func (r *Resource) UpdateUser(user *model.User, authToken string) error {
+	uuid, err := r.VerifyIDToken(authToken)
+	if err != nil {
+		return err
+	}
+
+	user.UID = uuid
+
+	return r.Repository.UpdateUser(user)
+}
+
 func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) error {
 	uuid, err := r.VerifyIDToken(authToken)
 	if err != nil {
@@ -62,7 +73,7 @@ func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) e
 
 	fileId, err := r.Repository.SendCurriculum(curriculum, user.DisplayName)
 	if err != nil {
-		fmt.Println("ERro send")
+		fmt.Println("Erro send")
 		return err
 	}
 
@@ -70,26 +81,26 @@ func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) e
 	user.UpdatedAt = time.Now()
 
 	if err := r.Repository.UpdateUser(user); err != nil {
-		fmt.Println("ERro update")
+		fmt.Println("Erro update")
 		return err
 	}
 
 	return nil
 }
 
-/*
-func (r *Resource) CreateVaga(vaga *model.Vaga, idToken string) error {
-	if err := r.VerifyIDToken(idToken); err != nil {
-		return err // Falha na autenticação
+func (r *Resource) CreateVaga(vaga *model.Vaga, authToken string) error {
+	uuid, err := r.VerifyIDToken(authToken)
+	if err != nil {
+		return err
 	}
 
+	vaga.Creator = uuid
 	if err := r.Repository.CreateVaga(vaga); err != nil {
 		return err
 	}
 
 	return nil
 }
-*/
 
 func (r *Resource) VerifyIDToken(idToken string) (string, error) {
 	token, err := r.Client.VerifyIDToken(context.Background(), idToken)
