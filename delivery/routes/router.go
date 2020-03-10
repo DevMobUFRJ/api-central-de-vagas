@@ -15,10 +15,13 @@ func Routes() {
 	e.Use(middleware.Logger())
 	e.Use(middleware.Recover())
 
-	e.POST("/user/create", ctrl.CreateUser) // Post Request Body
-	e.POST("/user/update", ctrl.UpdateUser)
-	e.POST("/user/create/cv", ctrl.SendCurriculum) // Post Curriculum file with Token in the header
-	e.POST("/vaga/create", ctrl.CreateVaga)
+	e.POST("/users", ctrl.CreateUser) // Post Request Body
+	e.PUT("/users", ctrl.UpdateUser)
+	e.POST("/users/cv", ctrl.SendCurriculum) // Post Curriculum file with Token in the header
+	e.POST("/vaga", ctrl.CreateVaga)
+
+	e.GET("/users", ctrl.GetUsers)
+	e.GET("/users/:uid", ctrl.GetUserById)
 
 	port = os.Getenv("PORT")
 
