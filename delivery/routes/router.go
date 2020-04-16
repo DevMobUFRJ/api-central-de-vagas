@@ -18,6 +18,7 @@ func Routes() {
 	e.POST("/users", ctrl.CreateUser) // Post Request Body
 	e.PUT("/users", ctrl.UpdateUser)
 	e.POST("/users/cv", ctrl.SendCurriculum) // Post Curriculum file with Token in the header
+	e.GET("/users/:uid/cv", ctrl.GetCurriculumByUid)
 	e.POST("/vaga", ctrl.CreateVaga)
 
 	e.GET("/users", ctrl.GetUsers)

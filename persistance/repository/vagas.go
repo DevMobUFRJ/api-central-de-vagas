@@ -2,31 +2,36 @@ package repository
 
 import (
 	"api-central-de-vagas/model"
+	"firebase.google.com/go/storage"
 	"fmt"
 	"github.com/globalsign/mgo"
 	"github.com/globalsign/mgo/bson"
 	"io"
 	"mime/multipart"
+	"strings"
 	"time"
 )
 
 type Resource struct {
 	mongoSession *mgo.Session
+	storage *storage.Client
 }
 
 type Vagas interface {
 	CreateUser(user *model.User) error
 	UpdateUser(user *model.User) error
 	SendCurriculum(curriculum multipart.File, userName string) (interface{}, error)
+	GetCurriculumByGridId(gridId interface{}) ([]byte, error)
 	CreateVaga(vaga *model.Vaga) error
 	GetUserByUID(uid string) (*model.User, error)
 	GetUserResponseByUID(uid string) (*model.UserResponse, error)
 	GetUsers() (*[]model.UserResponse, error)
 }
 
-func NewRepository(mongoSession *mgo.Session) Vagas {
+func NewRepository(mongoSession *mgo.Session, storage *storage.Client) Vagas {
 	return &Resource{
 		mongoSession: mongoSession,
+		storage: storage,
 	}
 }
 
@@ -117,6 +122,8 @@ func (r *Resource) UpdateUser(user *model.User) error {
 }
 
 func (r *Resource) SendCurriculum(curriculum multipart.File, userName string) (interface{}, error) {
+	defer curriculum.Close()
+
 	file, err := r.mongoSession.DB("central-de-vagas").GridFS("fs").Create(fmt.Sprintf("CV_%s.pdf", userName))
 	if err != nil {
 		return "", err
@@ -127,15 +134,42 @@ func (r *Resource) SendCurriculum(curriculum multipart.File, userName string) (i
 		return "", err
 	}
 
-	if err := curriculum.Close(); err != nil {
-		return "", err
-	}
-
 	if err := file.Close(); err != nil {
 		return "", err
 	}
 
 	return file.Id(), nil
+
+	/*Firebase
+	storageTime := time.Now()
+	bucket, err := r.storage.Bucket("central-de-vagas.appspot.com")
+	wc := bucket.Object(fmt.Sprintf("CV_%s.pdf", userName)).NewWriter(context.Background())
+	_, err = io.Copy(wc, curriculum)
+	if err != nil {
+		return "", err
+	}
+
+	if err := wc.Close(); err != nil {
+		return "", err
+	}
+	fmt.Println("Time for storage: ", time.Since(storageTime))
+	*/
+}
+
+func (r *Resource) GetCurriculumByGridId(gridId interface{}) ([]byte, error) {
+	query := bson.M{
+		"files_id": bson.ObjectIdHex(strings.Split(fmt.Sprintf("%v", gridId), `"`)[1]),
+	}
+
+	file := &struct {
+		Data []byte `bson:"data"`
+	}{}
+
+	if err := r.mongoSession.DB("central-de-vagas").GridFS("fs").Chunks.Find(query).One(file); err != nil {
+		return nil, err
+	}
+
+	return file.Data, nil
 }
 
 func (r *Resource) GetUserByUID(uid string) (*model.User, error) {

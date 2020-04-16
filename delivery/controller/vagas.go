@@ -14,10 +14,13 @@ type Resource struct {
 	Service service.Vagas
 }
 
+
+
 type Vagas interface {
 	CreateUser(c echo.Context) error
 	UpdateUser(c echo.Context) error
 	SendCurriculum(c echo.Context) error
+	GetCurriculumByUid(c echo.Context) error
 	CreateVaga(c echo.Context) error
 	GetUsers(c echo.Context) error
 	GetUserById(c echo.Context) error
@@ -96,7 +99,7 @@ func (r *Resource) SendCurriculum(c echo.Context) error {
 
 	authToken, err := getTokenFromHeader(c)
 	if err != nil {
-		return c.JSON(http.StatusBadRequest, err)
+		return c.JSON(http.StatusBadRequest, err.Error())
 	}
 
 	// Gets the curriculum file
@@ -110,6 +113,25 @@ func (r *Resource) SendCurriculum(c echo.Context) error {
 	}
 
 	return c.JSON(http.StatusOK, http.NoBody)
+}
+
+func (r *Resource) GetCurriculumByUid(c echo.Context) error {
+	authToken, err := getTokenFromHeader(c)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, err.Error())
+	}
+
+	uid := c.Param("uid")
+	if len(uid) == 0 {
+		return c.JSON(http.StatusBadRequest, errors.New("user uid must not be empty"))
+	}
+
+	curriculum, err := r.Service.GetCurriculumByUid(uid, authToken)
+	if err != nil {
+		return c.JSON(http.StatusBadRequest, err)
+	}
+
+	return c.Blob(http.StatusOK, "application/pdf", curriculum)
 }
 
 func (r *Resource) CreateVaga(c echo.Context) error {

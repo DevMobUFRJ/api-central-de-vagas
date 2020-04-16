@@ -19,6 +19,7 @@ type Vagas interface {
 	CreateUser(user *model.User) error
 	UpdateUser(user *model.User, authToken string) error
 	SendCurriculum(curriculum multipart.File, authToken string) error
+	GetCurriculumByUid(uid, authToken string) ([]byte, error)
 	CreateVaga(vaga *model.Vaga, authToken string) error
 	GetUsers() (*[]model.UserResponse, error)
 	GetUserByUID(id string) (*model.UserResponse, error)
@@ -30,7 +31,6 @@ func NewService(repository repository.Vagas, client *auth.Client) Vagas {
 		Client: client,
 	}
 }
-
 
 func (r *Resource) GetUsers() (*[]model.UserResponse, error) {
 	users, err := r.Repository.GetUsers()
@@ -89,12 +89,12 @@ func (r *Resource) UpdateUser(user *model.User, authToken string) error {
 }
 
 func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) error {
-	uuid, err := r.VerifyIDToken(authToken)
+	uid, err := r.VerifyIDToken(authToken)
 	if err != nil {
 		return err
 	}
 
-	user, err := r.Repository.GetUserByUID(uuid)
+	user, err := r.Repository.GetUserByUID(uid)
 	if err != nil {
 		return err
 	}
@@ -116,6 +116,29 @@ func (r *Resource) SendCurriculum(curriculum multipart.File, authToken string) e
 	return nil
 }
 
+func (r *Resource) GetCurriculumByUid(uid, authToken string) ([]byte, error) {
+	returnedUID, err := r.VerifyIDToken(authToken)
+	if err != nil {
+		return nil, err
+	}
+
+	if uid == "0" {
+		uid = returnedUID
+	}
+
+	user, err := r.Repository.GetUserByUID(uid)
+	if err != nil {
+		return nil, err
+	}
+
+	curriculum, err := r.Repository.GetCurriculumByGridId(user.CurriculumGridId)
+	if err != nil {
+		return nil, err
+	}
+
+	return curriculum, nil
+}
+
 func (r *Resource) CreateVaga(vaga *model.Vaga, authToken string) error {
 	uuid, err := r.VerifyIDToken(authToken)
 	if err != nil {
@@ -135,7 +158,7 @@ func (r *Resource) VerifyIDToken(idToken string) (string, error) {
 	if err != nil {
 		return "", err
 	}
-	
+
 	fmt.Println("User authorized with UID ",  token.UID)
 
 	return token.UID, nil
